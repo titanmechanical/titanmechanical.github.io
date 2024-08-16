@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <title>Titan Mechanical - Quality 4x4 Auto Repair</title>
+    <style>
+        /* General Styling */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            overflow: hidden;
+        }
+
+        h1, h2, h3 {
+            color: #dd9933;
+        }
+
+        a {
+            color: #dd9933;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* Navigation Bar */
+        .navbar {
+            background-color: #2a272b;
+            color: #fff;
+            padding: 10px 0;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 100;
+        }
+
+        .navbar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .navbar .logo img { 
+            height: 80px; /* Adjust logo height as needed */
+        }
+
+        .navbar ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .navbar li {
+            display: inline-block;
+            margin-left: 30px;
+        }
+
+        .navbar a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        /* Hero Section */
+        #hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://titanmechanical.com.au/wp-content/uploads/2021/04/Titan_Workshop_main_-768x628.jpg') no-repeat center center; 
+            background-size: cover;
+            color: #fff;
+            text-align: center;
+            padding: 150px 0;
+        }
+
+        #hero .container {
+            background: #0000008a;
+            padding: 20px;
+        }
+
+        #hero h1 {
+            font-size: 48px;
+            margin-bottom: 10px;
+        }
+
+        #hero p {
+            font-size: 24px;
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            font-size: 18px;
+            background-color: #dd9933; 
+            color: #fff;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #b37427; 
+        }
+
+        /* About Us Section */
+        #about {
+            padding: 50px 0;
+            text-align: center;
+            background-color: #666666; /* Secondary brand color */
+            color: white; /* White text for contrast */
+        }
+
+        #about h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        #about p {
+            font-size: 18px;
+            line-height: 1.5;
+            margin-bottom: 10px;
+        }
+
+        /* Services Section */
+        #services {
+            padding: 50px 0;
+            background-color: #f9f9f9;
+        }
+
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive grid */
+            gap: 20px;
+        }
+
+        .service {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .service img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 20px;
+        }
+
+        .service h3 {
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+
+        #services .service-grid .service .service-content {
+            padding: 15px; /* Add padding for better visual appeal */
+            line-height: 1.5;
+            margin-top: 10px;
+            border-top: 1px solid #eee; /* Subtle divider */
+        }
+
+        #about .testimonial {
+            background-color: #393939;
+            color: #fce1c0;
+            width: 33%;
+            float: right;
+            clear: both;
+            padding: 20px;
+            margin: 0 20px 20px;
+            border-left: 5px solid #dd9933;
+            font-family: 'Georgia', serif;
+        }
+
+        #about .testimonial .quote-mark { 
+            font-size: 48px; 
+            color: #b37427; /* Darker brand color */
+            line-height: 0.8; /* Adjust vertical spacing */
+            margin-bottom: 10px; 
+        }
+
+        #about .testimonial .author { 
+            text-align: right;
+            color:#888;
+            font-size: 16px;
+            font-weight: normal;
+        }
+
+        /* Contact and Location Section */
+        #contact {
+            padding: 50px 0;
+            background-color: #666; /* Use a lighter color from the brand palette */
+            color: #fff; /* Dark text for better contrast */
+            text-align: center;
+        }
+
+        #contact h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        #contact p {
+            font-size: 18px;
+            line-height: 1.5;
+            margin-bottom: 20px;
+        }
+
+        #contact ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        #contact li {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        /* Social Media Section */
+        #social-media {
+            background-color: #333;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        #social-media ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: inline-block;
+        }
+
+        #social-media li {
+            display: inline-block;
+            margin: 0 10px;
+        }
+
+        #social-media a {
+            color: #fff;
+            font-size: 24px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+        }
+
+        /* Media Queries for Responsiveness */
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 10px;
+            }
+
+            #hero {
+                padding: 100px 0;
+            }
+
+            #hero h1 {
+                font-size: 36px;
+            }
+
+            #hero p {
+                font-size: 18px;
+            }
+
+            .service {
+                margin-bottom: 10px;
+            }
+
+            .testimonial {
+                margin-bottom: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <a href="#">
+                    <img src="https://titanmechanical.com.au/wp-content/uploads/2017/05/logo6.jpg" alt="Titan Mechanical Logo">
+                </a>
+            </div>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section id="hero">
+        <div class="container">
+            <h1>Titan Mechanical: Quality 4x4 Auto Repair</h1>
+            <p>Specialist 4x4 & Diesel Mechanics in Ferntree Gully</p>
+            <a href="#contact" class="btn">Book Now</a>
+        </div>
+    </section>
+
+    <section id="about">
+        <div class="container">
+            <h2>About Us</h2>
+            <div class="about-content"> 
+
+                <div class="testimonial">
+                    <span class="quote-mark">“</span>Always helpful and honest. Brendan was recommended to me by another mechanic. They go above and beyond to help, great pricing and trustworthy work. <span class="quote-mark">”</span> 
+                    <p class="author">- Andrew C.</p>
+                </div>
+
+                <div class="testimonial">
+                    <span class="quote-mark">“</span>I used Brendan for the first time following a recommendation by another mechanic that he knows his land cruisers! Well, he sorted out my issues and the old truck is running better than it has for a long time. Helpful in explaining what the issues were. Highly recommend Titan! <span class="quote-mark">”</span> 
+                    <p class="author">- R8 Dream</p>
+                </div>
+
+                <p>Titan Mechanical is a full-service automotive repair shop specializing in <strong>diesel performance tuning and diagnostics</strong>. We provide quality repairs and maintenance for most makes and models, ensuring your car runs like new.</p> 
+
+                <p>We are a VACC Accredited repairer using the <strong>latest Snap-On diagnostic tooling</strong> to accurately identify and resolve any issues with your vehicle. </p>
+
+                <p>From general maintenance to engine rebuilds, we ensure your car runs like new.  <strong>We also provide logbook servicing to maintain your new car warranty.</strong></p>
+                <p>Contact us today to schedule your next service or discuss your automotive needs, or follow us on <a href="https://www.facebook.com/titanmech4wd" target="_blank">Facebook</a> and <a href="https://www.instagram.com/titanmechanical" target="_blank">Instagram</a> for the latest updates and project highlights!</p> 
+            </div>
+        </div>
+    </section>
+
+    <section id="services">
+        <div class="container">
+            <h2>Our Services</h2>
+            <div class="service-grid">
+                <div class="service">
+                    <img src="https://titanmechanical.com.au/wp-content/uploads/2017/05/slide_4.jpg" alt="Brakes and Clutches">
+                    <h3 class="service-heading">Brakes & Clutches</h3>
+                    <div class="service-content">
+                        <p>We offer comprehensive brake and clutch services, including:</p>
+                        <ul>
+                            <li>Brake inspections, repairs, and replacements</li>
+                            <li>Clutch diagnostics, adjustments, and installations</li>
+                            <li>High-quality brake pads, rotors, and clutch kits</li>
+                        </ul>
+                    </div> 
+                </div>
+                <div class="service">
+                    <img src="https://titanmechanical.com.au/wp-content/uploads/2017/08/Slide_6.jpg" alt="4x4 Service and Repairs">
+                    <h3 class="service-heading">4x4 Service & Repairs</h3>
+                    <div class="service-content">
+                        <p>Get your 4x4 ready for any adventure with our specialized services:</p>
+                        <ul>
+                            <li>4x4 trip preparation and safety checks</li>
+                            <li>Suspension upgrades and modifications</li>
+                            <li>Recovery gear installation and advice</li>
+                            <li>Differential and drivetrain repairs</li> 
+                        </ul>
+                    </div>
+                </div>
+                <div class="service">
+                    <img src="https://titanmechanical.com.au/wp-content/uploads/2017/05/slide_5.jpg" alt="Suspension">
+                    <h3 class="service-heading">Suspension</h3>
+                    <div class="service-content">
+                        <p>We enhance your vehicle's handling and comfort with:</p>
+                        <ul>
+                            <li>Suspension inspections and diagnostics</li>
+                            <li>Shock absorber and strut replacements</li>
+                            <li>Lift kit installations and adjustments</li>
+                            <li>Steering and alignment services</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="service">
+                    <img src="https://placehold.it/300x200?text=Diesel" alt="Diesel Engine Specialist">
+                    <h3 class="service-heading">Diesel Engine Specialist</h3>
+                    <div class="service-content">
+                        <p>We have extensive experience in diagnosing and repairing modern diesel engines:</p>
+                        <ul>
+                            <li>Common rail diesel service and repair</li>
+                            <li>Diesel performance upgrades (exhausts, turbos, intercoolers, remapping)</li>
+                            <li>EGR intake cleaning</li>
+                            <li>DPF cleaning and regeneration</li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Add more service categories as needed -->
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="container">
+            <h2>Contact Us</h2>
+            <p>Have questions or need to book a service? Get in touch!</p>
+            <ul>
+                <li><strong>Phone:</strong> <a href="tel:+61397560488">(03) 9756 0488</a></li> 
+                <li><strong>Mobile:</strong> <a href="tel:+61484557618">0484 557 618</a></li>
+                <li><strong>Email:</strong> <a href="mailto:sales@titanmechanical.com.au">sales@titanmechanical.com.au</a></li>
+                <li><strong>Hours:</strong> Monday - Friday: 8:00 AM - 5:00 PM</li>
+                <li><strong>Location:</strong> 15-17 Fitzgerald Street, Ferntree Gully, 3156</li>
+            </ul>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3152.1369605343083!2d145.29379771540986!3d-37.89215174218361!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad62d442e555555%3A0x348d50b6730cbd55!2s15-17%20Fitzgerald%20St%2C%20Ferntree%20Gully%20VIC%203156!5e0!3m2!1sen!2sau!4v1701967851083!5m2!1sen!2sau" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe> 
+        </div>
+    </section>
+
+    <section id="social-media">
+        <div class="container">
+            <ul>
+                <li><a href="https://www.facebook.com/titanmech4wd" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+                <li><a href="https://www.instagram.com/titanmechanical" target="_blank"><i class="fab fa-instagram"></i></a></li>
+            </ul>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2024 Titan Mechanical. All rights reserved.</p>
+    </footer>
+</body>
+</html>
