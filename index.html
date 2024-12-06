@@ -141,7 +141,6 @@
             padding: 30px;
             border-radius: 5px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            text-align: center;
         }
 
         .service img {
@@ -162,7 +161,7 @@
             margin-top: 10px;
             border-top: 1px solid #eee;
         }
-        
+
         .service-content ul {
             list-style: none;
             padding: 0;
@@ -213,6 +212,74 @@
         #contact li {
             font-size: 18px;
             margin-bottom: 10px;
+        }
+        .trusted-brands {
+            padding: 20px;
+            background: #fff;
+            text-align: center;
+        }
+
+        .trusted-brands h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .brand-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 20px;
+            align-items: start;
+            justify-items: center;
+        }
+
+        .brand-item {
+            background: #f9f9f9;
+            border-radius: 5px;
+            padding: 15px;
+            text-align: center;
+            max-width: 200px;
+        }
+
+        .brand-item a {
+            text-decoration: none;
+            color: #333;
+            display: block;
+        }
+
+        .brand-item img {
+            width: 100%;
+            height: auto;
+            object-fit: contain;
+            margin-bottom: 10px;
+        }
+
+        .brand-item h3 {
+            margin: 10px 0 5px 0;
+            font-size: 16px;
+            color: #333;
+            line-height: 1.2;
+        }
+
+        .brand-item p {
+            font-size: 14px;
+            line-height: 1.4;
+            margin: 0;
+            color: #555;
+        }
+
+        @media (max-width: 600px) {
+            .trusted-brands h2 {
+                font-size: 20px;
+            }
+
+            .brand-item h3 {
+                font-size: 14px;
+            }
+
+            .brand-item p {
+                font-size: 12px;
+            }
         }
 
         #social-media {
@@ -300,7 +367,7 @@
             <h2>About Us</h2>
             <div class="about-content"> 
                 <!-- Testimonials removed -->
-                <p>Titan Mechanical is a full-service automotive repair shop specializing in diesel performance tuning and diagnostics. We use advanced Snap-On diagnostic tools and dyno testing to identify and fix issues.</p> 
+                <p>Titan Mechanical is a full-service automotive repair shop specialising in diesel performance tuning and diagnostics. We use advanced Snap-On diagnostic tools and dyno testing to identify and fix issues.</p> 
                 <p>We handle general maintenance, logbook servicing, and a wide range of repairs to keep your vehicle running efficiently.</p>
                 <p>Contact us today to schedule your next service or follow us on <a href="https://www.facebook.com/titanmech4wd" target="_blank">Facebook</a> and <a href="https://www.instagram.com/titanmechanical" target="_blank">Instagram</a> for updates and project highlights!</p> 
             </div>
@@ -395,7 +462,123 @@
             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3152.1369605343083!2d145.29379771540986!3d-37.89215174218361!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad62d442e555555%3A0x348d50b6730cbd55!2s15-17%20Fitzgerald%20St%2C%20Ferntree%20Gully%20VIC%203156!5e0!3m2!1sen!2sau!4v1701967851083!5m2!1sen!2sau" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe> 
         </div>
     </section>
-
+    <section class="trusted-brands">
+        <h2>Brands &amp; Accreditations</h2>
+        <div class="brand-grid">
+            <div class="brand-item">
+                <a href="https://www.redarc.com.au/" target="_blank" rel="noopener">
+                    <img src="https://titanmechanical.com.au/wp-content/uploads/2020/11/redarc.png" alt="Redarc">
+                    <h3>Redarc</h3>
+                </a>
+                <p>Australian electronics and dual-battery systems for off-grid reliability.</p>
+            </div>
+            <div class="brand-item">
+                <a href="https://www.redback4x4.com.au/" target="_blank" rel="noopener">
+                    <img src="https://titanmechanical.com.au/wp-content/uploads/2020/11/redback4x4-logo.png" alt="Redback">
+                    <h3>Redback</h3>
+                </a>
+                <p>Rugged exhaust systems improving airflow and power in tough conditions.</p>
+            </div>
+            <div class="brand-item">
+                <a href="https://roadsafe.com.au/" target="_blank" rel="noopener">
+                    <img src="https://titanmechanical.com.au/wp-content/uploads/2020/11/roadsafe-logo.jpg" alt="Roadsafe">
+                    <h3>Roadsafe</h3>
+                </a>
+                <p>Durable steering and suspension components built for rough terrain.</p>
+            </div>
+            <div class="brand-item">
+                <a href="https://www.safari4x4.com.au/" target="_blank" rel="noopener">
+                    <img src="https://titanmechanical.com.au/wp-content/uploads/2020/11/safari.jpg" alt="Safari">
+                    <h3>Safari</h3>
+                </a>
+                <p>Quality snorkels providing cleaner air intake for dusty or wet tracks.</p>
+            </div>
+            <div class="brand-item">
+                <a href="http://www.vacc.com.au/" target="_blank" rel="noopener">
+                    <img src="https://titanmechanical.com.au/wp-content/uploads/2017/05/vacc_accreditation_2.jpg" alt="VACC">
+                    <h3>VACC</h3>
+                </a>
+                <p>Industry accreditation ensuring high service standards and ethics.</p>
+            </div>
+            <div class="brand-item">
+                <a href="http://www.snapontools.com.au/diagnostics" target="_blank" rel="noopener">
+                    <img src="https://titanmechanical.com.au/wp-content/uploads/2017/05/Snap_On_2.jpg" alt="Snap On">
+                    <h3>Snap-On</h3>
+                </a>
+                <p>Advanced diagnostic tools enabling fast, accurate fault detection.</p>
+            </div>
+            <div class="brand-item">
+                <a href="http://grunt4x4.com.au/" target="_blank" rel="noopener">
+                    <img src="https://titanmechanical.com.au/wp-content/uploads/2017/06/grunt_550.jpg" alt="Grunt 4x4">
+                    <h3>Grunt 4x4</h3>
+                </a>
+                <p>Hard-wearing off-road gear designed for Australia’s extreme conditions.</p>
+            </div>
+            <div class="brand-item">
+                <a href="https://au.bosch-automotive.com/en/" target="_blank" rel="noopener">
+                    <img src="https://titanmechanical.com.au/wp-content/uploads/2017/05/Bosch_Batteries.jpg" alt="Bosch Batteries">
+                    <h3>Bosch Batteries</h3>
+                </a>
+                <p>Reliable batteries ensuring consistent starts and long service life.</p>
+            </div>
+            <div class="brand-item">
+                <a href="https://dobinsonsprings.com" target="_blank" rel="noopener">
+                    <img src="https://titanmechanical.com.au/wp-content/uploads/2019/06/dobinsons.jpg" alt="Dobinsons Suspension">
+                    <h3>Dobinsons Suspension</h3>
+                </a>
+                <p>Suspension upgrades enhancing ride comfort and load capability.</p>
+            </div>
+            <div class="brand-item">
+                <a href="https://www.cornells.com.au/" target="_blank" rel="noopener">
+                    <img src="https://titanmechanical.com.au/wp-content/uploads/2020/11/cornell.jpg" alt="Cornell">
+                    <h3>Cornell</h3>
+                </a>
+                <p>Diesel injection specialists for cleaner, more efficient operation.</p>
+            </div>
+            <div class="brand-item">
+                <a href="https://www.denso.com.au/" target="_blank" rel="noopener">
+                    <img src="https://titanmechanical.com.au/wp-content/uploads/2020/11/denso1.jpg" alt="Denso">
+                    <h3>Denso</h3>
+                </a>
+                <p>Reliable engine management and fuel systems for consistent performance.</p>
+            </div>
+            <div class="brand-item">
+                <a href="https://directionplus.com.au/" target="_blank" rel="noopener">
+                    <img src="https://titanmechanical.com.au/wp-content/uploads/2020/11/direction-plus-logo.jpg" alt="Direction Plus">
+                    <h3>Direction Plus</h3>
+                </a>
+                <p>Filtration and protection products reducing contaminants and wear.</p>
+            </div>
+            <div class="brand-item">
+                <a href="https://www.gturbo.com.au/" target="_blank" rel="noopener">
+                    <img src="https://titanmechanical.com.au/wp-content/uploads/2020/11/gturbo.png" alt="Gturbo">
+                    <h3>Gturbo</h3>
+                </a>
+                <p>Performance turbos increasing power and torque under tough conditions.</p>
+            </div>
+            <div class="brand-item">
+                <a href="https://www.harrop.com.au/" target="_blank" rel="noopener">
+                    <img src="https://titanmechanical.com.au/wp-content/uploads/2020/11/harrop.png" alt="Harrop">
+                    <h3>Harrop</h3>
+                </a>
+                <p>Upgraded driveline and superchargers enhancing capability and response.</p>
+            </div>
+            <div class="brand-item">
+                <a href="https://www.npcperformance.com.au/" target="_blank" rel="noopener">
+                    <img src="https://titanmechanical.com.au/wp-content/uploads/2020/11/npc.png" alt="NPC">
+                    <h3>NPC</h3>
+                </a>
+                <p>Heavy-duty clutch kits built to endure demanding off-road conditions.</p>
+            </div>
+            <div class="brand-item">
+                <a href="https://processwest.com.au/catalog" target="_blank" rel="noopener">
+                    <img src="https://titanmechanical.com.au/wp-content/uploads/2020/11/process-west.png" alt="Process West">
+                    <h3>Process West</h3>
+                </a>
+                <p>Quality intercoolers and intakes improving engine efficiency.</p>
+            </div>
+        </div>
+    </section>
     <section id="social-media">
         <div class="container">
             <ul>
