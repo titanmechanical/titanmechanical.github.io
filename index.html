@@ -4,8 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Titan Mechanical - Quality 4x4 Auto Repair</title>
+    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Roboto+Slab:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome (optional, for social icons) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+     <!-- AOS (optional, for scroll animations) -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <style>
         /* --- Reset and Basic Styles --- */
         body {
@@ -99,8 +103,8 @@
         }
 
         /* --- Hero Section --- */
-        #hero {
-            background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('/Workshop Front .jpg') no-repeat;
+       #hero {
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.6)), url('/Workshop Front .jpg') no-repeat; /* Gradient overlay */
             background-size: cover;
             color: #fff;
             text-align: center;
@@ -115,8 +119,14 @@
         }
 
         #hero h1 {
-            color: #fff; /* Force white color for h1 in hero */
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Add text shadow */
+            color: #fff;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+            font-weight: 700; /* Bolder font-weight */
+            margin-bottom: 1.5rem; /* Increased margin */
+        }
+
+        #hero .btn {
+            margin-top: 1rem; /* Add some space above the button */
         }
 
         /* --- Button --- */
@@ -127,14 +137,14 @@
             background-color: #ef4b24;
             color: #fff;
             border-radius: 8px;
-            transition: background-color 0.3s ease, color 0.3s ease; /* Add color transition */
+            transition: background-color 0.3s ease, color 0.3s ease;
             border: none;
             cursor: pointer;
         }
 
         .btn:hover {
-            background-color: #333; /* Darker background on hover */
-            color: #fff;  /* Keep text white on hover */
+            background-color: #333;
+            color: #fff;
         }
 
         /* --- Sections --- */
@@ -149,6 +159,21 @@
             color: #444;
         }
 
+        #about .container {
+            max-width: 800px; /* Limit text width */
+            margin: 0 auto; /* Center the container */
+        }
+         #about .about-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Center items horizontally */
+        }
+
+        #about .about-icon {
+            margin-bottom: 20px; /* Space between icon and text */
+            font-size: 48px;     /* Adjust as needed */
+            color: #ef4b24;    /* Use your accent color */
+        }
         /* --- Services --- */
         .service-grid {
             display: grid;
@@ -161,6 +186,11 @@
             padding: 30px;
             border-radius: 8px;
             border: 1px solid #eee;
+            transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
+        }
+        .service:hover {
+            transform: scale(1.03); /* Slightly enlarge on hover */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow on hover */
         }
 
         .service img {
@@ -170,6 +200,8 @@
             object-position: center;
             border-radius: 8px;
             margin-bottom: 20px;
+             transition: transform 0.3s ease; /* Add transition for the image */
+
         }
 
         .service-content ul {
@@ -197,6 +229,9 @@
 
         .service h3{
             color: #ef4b24;
+            border-bottom: 2px solid #eee; /* Subtle separator */
+            padding-bottom: 10px;        /* Space below the separator */
+            margin-bottom: 15px;          /* Space after the heading */
         }
 
         /* --- Contact --- */
@@ -233,8 +268,8 @@
 
         .brand-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Reduced minmax */
-            gap: 20px;  /*Reduced gap*/
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px;
             align-items: center;
             justify-items: center;
         }
@@ -244,9 +279,8 @@
             border-radius: 8px;
             padding: 20px;
             text-align: center;
-            /*max-width: 200px; Removed max width */
-            width: 100%; /* Take up full container width */
-            box-sizing: border-box; /* Include padding in width calculation */
+            width: 100%;
+            box-sizing: border-box;
             display: flex;
             flex-direction: column;
 
@@ -256,7 +290,7 @@
             text-decoration: none;
             color: #333;
             display: block;
-            height: 100%; /* Ensure the link takes up full item height*/
+            height: 100%;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -268,12 +302,12 @@
             height: 80px;
             object-fit: contain;
             margin-bottom: 10px;
-            max-width: 100%; /* Prevent image overflow */
+            max-width: 100%;
 
         }
 
         .brand-item h3 {
-            margin: 0 0 5px 0; /*Reduce margin*/
+            margin: 0 0 5px 0;
             font-size: 16px;
             color: #333;
             line-height: 1.2;
@@ -393,13 +427,18 @@
         </div>
     </section>
 
-    <section id="about">
+    <section id="about" data-aos="fade-up">
         <div class="container">
+          <div class="about-content">
+            <div class="about-icon">
+                <i class="fas fa-wrench"></i>  <!-- Example icon; choose one that fits -->
+            </div>
             <h2>About Us</h2>
             <p>Titan Mechanical is a full-service automotive repair shop specialising in diesel performance tuning and diagnostics. We use advanced Snap-On diagnostic tools and dyno testing to identify and fix issues.</p>
             <p>We handle general maintenance, logbook servicing, and a wide range of repairs to keep your vehicle running efficiently.</p>
             <p>Contact us today to schedule your next service or follow us on <a href="https://www.facebook.com/titanmech4wd" target="_blank">Facebook</a> and <a href="https://www.instagram.com/titanmechanical" target="_blank">Instagram</a> for updates and project highlights!</p>
             <a href="#contact" class="btn">Book a Service</a>
+          </div>
         </div>
     </section>
 
@@ -407,7 +446,7 @@
         <div class="container">
             <h2>Our Services</h2>
             <div class="service-grid">
-                <div class="service">
+                <div class="service" data-aos="fade-up" data-aos-delay="100">
                     <img src="https://titanmechanical.com.au/wp-content/uploads/2017/05/slide_4.jpg" alt="Brakes and Clutches">
                     <h3>Brakes & Clutches</h3>
                     <div class="service-content">
@@ -419,7 +458,7 @@
                         </ul>
                     </div>
                 </div>
-                <div class="service">
+                <div class="service" data-aos="fade-up" data-aos-delay="200">
                     <img src="/79 Dyno 2.jpg" alt="4x4 Service and Repairs">
                     <h3>4x4 Service & Repairs</h3>
                     <div class="service-content">
@@ -431,7 +470,7 @@
                         </ul>
                     </div>
                 </div>
-                <div class="service">
+                <div class="service" data-aos="fade-up" data-aos-delay="300">
                     <img src="/Dobinsons Twin Tube.jpg" alt="Suspension">
                     <h3>Suspension</h3>
                     <div class="service-content">
@@ -445,7 +484,7 @@
                         </ul>
                     </div>
                 </div>
-                <div class="service">
+                <div class="service" data-aos="fade-up" data-aos-delay="400">
                     <img src="/Manifold Clean .jpg" alt="Diesel Engine Specialist">
                     <h3>Diesel Engine Specialist</h3>
                     <div class="service-content">
@@ -459,7 +498,7 @@
                         </ul>
                     </div>
                 </div>
-                <div class="service">
+                <div class="service" data-aos="fade-up" data-aos-delay="500">
                     <img src="/D22 Dyno .jpg" alt="Diagnostics">
                     <h3>Diagnostics</h3>
                     <div class="service-content">
@@ -473,7 +512,7 @@
                     </div>
                 </div>
             </div>
-             <div style="text-align: center; margin-top: 2rem;">
+             <div style="text-align: center; margin-top: 2rem;"  data-aos="fade-up">
                <a href="#contact" class="btn">Get a Quote</a>
              </div>
         </div>
@@ -494,7 +533,7 @@
         </div>
     </section>
 
-    <section class="trusted-brands">
+    <section class="trusted-brands"  data-aos="fade-up">
         <h2>Brands & Accreditations</h2>
         <div class="brand-grid">
             <div class="brand-item">
@@ -620,6 +659,12 @@
     <footer>
         <p>© 2024 Titan Mechanical. All rights reserved.</p>
     </footer>
-
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800, // values from 0 to 3000, with step 50ms
+            once: true, // whether animation should happen only once - while scrolling down
+        });
+    </script>
 </body>
 </html>
