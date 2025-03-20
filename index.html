@@ -4,13 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Titan Mechanical - Quality 4x4 Auto Repair</title>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Roboto+Slab:wght@400;700&display=swap" rel="stylesheet">
     <style>
+        /* --- Reset and Basic Styles --- */
         body {
-            font-family: 'Arial', sans-serif;
+            font-family: 'Open Sans', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
-            color: #333;
+            background-color: #f8f8f8;
+            color: #444;
+            font-size: 18px;
+            line-height: 1.7;
         }
 
         .container {
@@ -21,22 +25,35 @@
         }
 
         h1, h2, h3 {
-            color: #ef4b24;
+            font-family: 'Roboto Slab', serif;
+            color: #444;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        h1 { font-size: 40px; }
+        h2 { font-size: 32px; }
+        h3 { font-size: 24px; }
+
+        p {
+          margin-bottom: 1rem; /* Add consistent spacing after paragraphs */
         }
 
         a {
             color: #ef4b24;
             text-decoration: none;
+            transition: color 0.2s ease;
         }
 
         a:hover {
-            text-decoration: underline;
+            color: #b37427;
         }
 
+        /* --- Navbar --- */
         .navbar {
             background-color: #000;
             color: #fff;
-            padding: 10px 0;
+            padding: 15px 0;
             position: fixed;
             top: 0;
             width: 100%;
@@ -49,8 +66,8 @@
             align-items: center;
         }
 
-        .navbar .logo img { 
-            height: 80px;
+        .navbar .logo img {
+            height: 65px;
         }
 
         .navbar ul {
@@ -68,10 +85,21 @@
             color: #fff;
             text-decoration: none;
             font-size: 18px;
+            font-weight: 600;
+            transition: color 0.2s ease;
         }
 
+        .navbar a:hover {
+            color: #ef4b24;
+        }
+
+        .navbar a.active{
+            color: #ef4b24;
+        }
+
+        /* --- Hero Section --- */
         #hero {
-            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/Workshop Front .jpg') no-repeat; 
+            background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('/Workshop Front .jpg') no-repeat;
             background-size: cover;
             color: #fff;
             text-align: center;
@@ -80,87 +108,61 @@
         }
 
         #hero .container {
-            background: #0000008a;
-            padding: 20px;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 30px;
+            border-radius: 8px;
         }
 
-        #hero h1 {
-            font-size: 48px;
-            margin-bottom: 10px;
-        }
-
-        #hero p {
-            font-size: 24px;
-            margin-bottom: 30px;
-        }
-
+        /* --- Button --- */
         .btn {
             display: inline-block;
-            padding: 12px 30px;
-            font-size: 18px;
-            background-color: #ef4b24; 
+            padding: 15px 35px;
+            font-size: 20px;
+            background-color: #ef4b24;
             color: #fff;
-            border-radius: 5px;
+            border-radius: 8px;
             transition: background-color 0.3s ease;
+            border: none;
+            cursor: pointer;
         }
 
         .btn:hover {
-            background-color: #b37427; 
+            background-color: #b37427;
+        }
+
+        /* --- Sections --- */
+        section {
+            padding: 80px 0;
         }
 
         #about {
-            padding: 50px 0;
+            color: #fff;
             text-align: center;
-            background-color: #333;
-            color: white;
+            background-color: #f8f8f8;
+            color: #444;
         }
 
-        #about h2 {
-            font-size: 36px;
-            margin-bottom: 20px;
-        }
-
-        #about p {
-            font-size: 18px;
-            line-height: 1.5;
-            margin-bottom: 10px;
-        }
-
-        #services {
-            padding: 50px 0;
-            background-color: #f9f9f9;
-        }
-
+        /* --- Services --- */
         .service-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
+            gap: 30px;
         }
 
         .service {
             background-color: #fff;
             padding: 30px;
-            border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            border: 1px solid #eee;
         }
 
         .service img {
             width: 100%;
-            height: 200px; /* or any fixed height that suits your design */
+            height: 200px;
             object-fit: cover;
             object-position: center;
-        }
-
-        .service h3 {
-            font-size: 24px;
-            margin-bottom: 15px;
-        }
-
-        #services .service-grid .service .service-content {
-            padding: 15px;
-            line-height: 1.5;
-            margin-top: 10px;
-            border-top: 1px solid #eee;
+            border-radius: 8px;
+            margin-bottom: 20px;
         }
 
         .service-content ul {
@@ -171,14 +173,14 @@
 
         .service-content ul li {
             position: relative;
-            padding-left: 20px;
-            margin-bottom: 8px;
-            line-height: 1.4;
+            padding-left: 25px;
+            margin-bottom: 10px;
+            line-height: 1.6;
         }
 
         .service-content ul li::before {
-            content: "•"; /* or a custom icon */
-            color: #ef4b24; /* brand color for the bullet */
+            content: "•";
+            color: #ef4b24;
             position: absolute;
             left: 0;
             top: 0;
@@ -186,22 +188,16 @@
             line-height: 1;
         }
 
+        .service h3{
+            color: #ef4b24;
+        }
+
+        /* --- Contact --- */
         #contact {
-            padding: 100px 0;
-            background-color: #333;
             color: #fff;
             text-align: center;
-        }
-
-        #contact h2 {
-            font-size: 36px;
-            margin-bottom: 20px;
-        }
-
-        #contact p {
-            font-size: 18px;
-            line-height: 1.5;
-            margin-bottom: 20px;
+            background-color: #f8f8f8;
+            color: #444;
         }
 
         #contact ul {
@@ -214,30 +210,32 @@
             font-size: 18px;
             margin-bottom: 10px;
         }
+
+        /* --- Trusted Brands --- */
         .trusted-brands {
-            padding: 20px;
+            padding: 50px 20px;
             background: #fff;
             text-align: center;
         }
 
         .trusted-brands h2 {
-            font-size: 24px;
-            margin-bottom: 20px;
-            color: #333;
+            font-size: 32px;
+            margin-bottom: 30px;
+            color: #444;
         }
 
         .brand-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-            gap: 20px;
-            align-items: start;
+            gap: 40px;
+            align-items: center;
             justify-items: center;
         }
 
         .brand-item {
             background: #f9f9f9;
-            border-radius: 5px;
-            padding: 15px;
+            border-radius: 8px;
+            padding: 20px;
             text-align: center;
             max-width: 200px;
         }
@@ -249,8 +247,8 @@
         }
 
         .brand-item img {
-            width: 100%;
-            height: auto;
+            width: auto;
+            height: 80px;
             object-fit: contain;
             margin-bottom: 10px;
         }
@@ -263,26 +261,10 @@
         }
 
         .brand-item p {
-            font-size: 14px;
-            line-height: 1.4;
-            margin: 0;
-            color: #555;
+            display: none; /* Hide descriptions by default */
         }
 
-        @media (max-width: 600px) {
-            .trusted-brands h2 {
-                font-size: 20px;
-            }
-
-            .brand-item h3 {
-                font-size: 14px;
-            }
-
-            .brand-item p {
-                font-size: 12px;
-            }
-        }
-
+        /* --- Social Media --- */
         #social-media {
             background-color: #333;
             padding: 20px 0;
@@ -306,34 +288,65 @@
             font-size: 24px;
         }
 
+        /* --- Footer --- */
         footer {
             background-color: #333;
             color: #fff;
             text-align: center;
-            padding: 10px 0;
+            padding: 20px 0;
+        }
+
+        /* --- Media Queries --- */
+        @media (max-width: 992px) {
+            .service-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
         }
 
         @media (max-width: 768px) {
             .container {
-                padding: 0 10px;
+                padding: 0 15px;
             }
+            h1 { font-size: 32px; }
+            h2 { font-size: 28px; }
+            h3 { font-size: 20px; }
+            p{font-size: 16px;}
 
             #hero {
                 padding: 100px 0;
             }
 
-            #hero h1 {
-                font-size: 36px;
+            .service-grid {
+                grid-template-columns: 1fr;
             }
 
-            #hero p {
-                font-size: 18px;
+            .navbar ul {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                width: 100%;
             }
 
-            .service {
+            .navbar li {
+                margin-left: 0;
                 margin-bottom: 10px;
             }
+
+            .btn {
+                padding: 12px 25px;
+                font-size: 16px;
+            }
+            section {
+                padding: 40px 0;
+            }
         }
+
+        @media (max-width: 576px){
+            .brand-grid{
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
     </style>
 </head>
 <body>
@@ -346,9 +359,8 @@
                 </a>
             </div>
             <ul>
-                <li><a href="#about">About</a></li>
+                <li><a href="#about" class="active">About</a></li>
                 <li><a href="#services">Services</a></li>
-                <!-- Testimonials removed -->
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </div>
@@ -358,7 +370,6 @@
         <div class="container">
             <h1>Titan Mechanical: Quality 4x4 Auto Repair</h1>
             <p>Specialist 4x4 & Diesel Mechanics in Ferntree Gully</p>
-            <!-- 'Book Now' leads to contact section -->
             <a href="#contact" class="btn">Speak To Our Team!</a>
         </div>
     </section>
@@ -366,12 +377,10 @@
     <section id="about">
         <div class="container">
             <h2>About Us</h2>
-            <div class="about-content"> 
-                <!-- Testimonials removed -->
-                <p>Titan Mechanical is a full-service automotive repair shop specialising in diesel performance tuning and diagnostics. We use advanced Snap-On diagnostic tools and dyno testing to identify and fix issues.</p> 
-                <p>We handle general maintenance, logbook servicing, and a wide range of repairs to keep your vehicle running efficiently.</p>
-                <p>Contact us today to schedule your next service or follow us on <a href="https://www.facebook.com/titanmech4wd" target="_blank">Facebook</a> and <a href="https://www.instagram.com/titanmechanical" target="_blank">Instagram</a> for updates and project highlights!</p> 
-            </div>
+            <p>Titan Mechanical is a full-service automotive repair shop specialising in diesel performance tuning and diagnostics. We use advanced Snap-On diagnostic tools and dyno testing to identify and fix issues.</p>
+            <p>We handle general maintenance, logbook servicing, and a wide range of repairs to keep your vehicle running efficiently.</p>
+            <p>Contact us today to schedule your next service or follow us on <a href="https://www.facebook.com/titanmech4wd" target="_blank">Facebook</a> and <a href="https://www.instagram.com/titanmechanical" target="_blank">Instagram</a> for updates and project highlights!</p>
+            <a href="#contact" class="btn">Book a Service</a>
         </div>
     </section>
 
@@ -380,8 +389,8 @@
             <h2>Our Services</h2>
             <div class="service-grid">
                 <div class="service">
-                    <img src="https://titanmechanical.com.au/wp-content/uploads/2017/05/slide_4.jpg" alt="Brakes and Clutches">
-                    <h3 class="service-heading">Brakes & Clutches</h3>
+                    <img src="/brakes-clutches.jpg" alt="Brakes and Clutches">
+                    <h3>Brakes & Clutches</h3>
                     <div class="service-content">
                         <p>We offer:</p>
                         <ul>
@@ -389,24 +398,23 @@
                             <li>Clutch diagnostics, adjustments, and installations</li>
                             <li>High-quality brake pads, rotors, and clutch kits</li>
                         </ul>
-                    </div> 
+                    </div>
                 </div>
                 <div class="service">
                     <img src="/79 Dyno 2.jpg" alt="4x4 Service and Repairs">
-                    <h3 class="service-heading">4x4 Service & Repairs</h3>
+                    <h3>4x4 Service & Repairs</h3>
                     <div class="service-content">
                         <p>Keep your 4x4 ready for off-road conditions:</p>
                         <ul>
                             <li>4x4 trip preparation and safety checks</li>
                             <li>Suspension upgrades and modifications</li>
-                            <!-- Recovery gear installation removed -->
-                            <li>Differential and drivetrain repairs</li> 
+                            <li>Differential and drivetrain repairs</li>
                         </ul>
                     </div>
                 </div>
                 <div class="service">
                     <img src="/Dobinsons Twin Tube.jpg" alt="Suspension">
-                    <h3 class="service-heading">Suspension</h3>
+                    <h3>Suspension</h3>
                     <div class="service-content">
                         <p>We enhance handling and comfort with:</p>
                         <ul>
@@ -420,7 +428,7 @@
                 </div>
                 <div class="service">
                     <img src="/Manifold Clean .jpg" alt="Diesel Engine Specialist">
-                    <h3 class="service-heading">Diesel Engine Specialist</h3>
+                    <h3>Diesel Engine Specialist</h3>
                     <div class="service-content">
                         <p>Comprehensive diesel solutions:</p>
                         <ul>
@@ -434,7 +442,7 @@
                 </div>
                 <div class="service">
                     <img src="/D22 Dyno .jpg" alt="Diagnostics">
-                    <h3 class="service-heading">Diagnostics</h3>
+                    <h3>Diagnostics</h3>
                     <div class="service-content">
                         <p>Identify issues fast and improve reliability:</p>
                         <ul>
@@ -446,6 +454,9 @@
                     </div>
                 </div>
             </div>
+             <div style="text-align: center; margin-top: 2rem;">
+               <a href="#contact" class="btn">Get a Quote</a>
+             </div>
         </div>
     </section>
 
@@ -454,146 +465,130 @@
             <h2>Contact Us</h2>
             <p>Have questions or need to book a service? Get in touch!</p>
             <ul>
-                <li><strong>Phone:</strong> <a href="tel:+61397560488">(03) 9756 0488</a></li> 
+                <li><strong>Phone:</strong> <a href="tel:+61397560488">(03) 9756 0488</a></li>
                 <li><strong>Mobile:</strong> <a href="tel:+61484557618">0484 557 618</a></li>
                 <li><strong>Email:</strong> <a href="mailto:sales@titanmechanical.com.au">sales@titanmechanical.com.au</a></li>
                 <li><strong>Hours:</strong> Monday - Friday: 8:00 AM - 5:00 PM</li>
                 <li><strong>Location:</strong> 15-17 Fitzgerald Street, Ferntree Gully, 3156</li>
             </ul>
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3152.1369605343083!2d145.29379771540986!3d-37.89215174218361!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad62d442e555555%3A0x348d50b6730cbd55!2s15-17%20Fitzgerald%20St%2C%20Ferntree%20Gully%20VIC%203156!5e0!3m2!1sen!2sau!4v1701967851083!5m2!1sen!2sau" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe> 
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3152.1369605343083!2d145.29379771540986!3d-37.89215174218361!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad62d442e555555%3A0x348d50b6730cbd55!2s15-17%20Fitzgerald%20St%2C%20Ferntree%20Gully%20VIC%203156!5e0!3m2!1sen!2sau!4v1701967851083!5m2!1sen!2sau" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
     </section>
+
     <section class="trusted-brands">
-        <h2>Brands &amp; Accreditations</h2>
+        <h2>Brands & Accreditations</h2>
         <div class="brand-grid">
             <div class="brand-item">
                 <a href="https://www.redarc.com.au/" target="_blank" rel="noopener">
-                    <img src="https://titanmechanical.com.au/wp-content/uploads/2020/11/redarc.png" alt="Redarc">
+                    <img src="/redarc.png" alt="Redarc">
                     <h3>Redarc</h3>
                 </a>
-                <p>Australian electronics and dual-battery systems for off-grid reliability.</p>
             </div>
             <div class="brand-item">
                 <a href="https://www.redback4x4.com.au/" target="_blank" rel="noopener">
-                    <img src="https://titanmechanical.com.au/wp-content/uploads/2020/11/redback4x4-logo.png" alt="Redback">
+                    <img src="/redback4x4-logo.png" alt="Redback">
                     <h3>Redback</h3>
                 </a>
-                <p>Rugged exhaust systems improving airflow and power in tough conditions.</p>
             </div>
             <div class="brand-item">
                 <a href="https://roadsafe.com.au/" target="_blank" rel="noopener">
-                    <img src="https://titanmechanical.com.au/wp-content/uploads/2020/11/roadsafe-logo.jpg" alt="Roadsafe">
+                    <img src="/roadsafe-logo.jpg" alt="Roadsafe">
                     <h3>Roadsafe</h3>
                 </a>
-                <p>Durable steering and suspension components built for rough terrain.</p>
             </div>
             <div class="brand-item">
                 <a href="https://www.safari4x4.com.au/" target="_blank" rel="noopener">
-                    <img src="https://titanmechanical.com.au/wp-content/uploads/2020/11/safari.jpg" alt="Safari">
+                    <img src="/safari.jpg" alt="Safari">
                     <h3>Safari</h3>
                 </a>
-                <p>Quality snorkels providing cleaner air intake for dusty or wet tracks.</p>
             </div>
             <div class="brand-item">
                 <a href="http://www.vacc.com.au/" target="_blank" rel="noopener">
-                    <img src="https://titanmechanical.com.au/wp-content/uploads/2017/05/vacc_accreditation_2.jpg" alt="VACC">
+                    <img src="/vacc_accreditation.jpg" alt="VACC">
                     <h3>VACC</h3>
                 </a>
-                <p>Industry accreditation ensuring high service standards and ethics.</p>
             </div>
             <div class="brand-item">
                 <a href="http://www.snapontools.com.au/diagnostics" target="_blank" rel="noopener">
-                    <img src="https://titanmechanical.com.au/wp-content/uploads/2017/05/Snap_On_2.jpg" alt="Snap On">
+                    <img src="/Snap_On_Tools.jpg" alt="Snap On">
                     <h3>Snap-On</h3>
                 </a>
-                <p>Advanced diagnostic tools enabling fast, accurate fault detection.</p>
             </div>
             <div class="brand-item">
                 <a href="http://grunt4x4.com.au/" target="_blank" rel="noopener">
-                    <img src="https://titanmechanical.com.au/wp-content/uploads/2017/06/grunt_550.jpg" alt="Grunt 4x4">
+                    <img src="/grunt_550.jpg" alt="Grunt 4x4">
                     <h3>Grunt 4x4</h3>
                 </a>
-                <p>Hard-wearing off-road gear designed for Australia’s extreme conditions.</p>
             </div>
             <div class="brand-item">
                 <a href="https://au.bosch-automotive.com/en/" target="_blank" rel="noopener">
-                    <img src="https://titanmechanical.com.au/wp-content/uploads/2017/05/Bosch_Batteries.jpg" alt="Bosch Batteries">
+                    <img src="/Bosch_Batteries.jpg" alt="Bosch Batteries">
                     <h3>Bosch Batteries</h3>
                 </a>
-                <p>Reliable batteries ensuring consistent starts and long service life.</p>
             </div>
             <div class="brand-item">
                 <a href="https://dobinsonsprings.com" target="_blank" rel="noopener">
-                    <img src="https://titanmechanical.com.au/wp-content/uploads/2019/06/dobinsons.jpg" alt="Dobinsons Suspension">
+                    <img src="/dobinsons.jpg" alt="Dobinsons Suspension">
                     <h3>Dobinsons Suspension</h3>
                 </a>
-                <p>Suspension upgrades enhancing ride comfort and load capability.</p>
             </div>
             <div class="brand-item">
                 <a href="https://bossairsuspension.com.au" target="_blank" rel="noopener">
                     <img src="/boss-air-suspension.png" alt="Boss Air Suspension">
                     <h3>Boss Air Suspension</h3>
                 </a>
-                <p>Air suspension solutions designed for heavy loads and off-road reliability.</p>
             </div>
             <div class="brand-item">
                 <a href="https://caloffroad.com.au" target="_blank" rel="noopener">
                     <img src="/caloffroad.png" alt="CalOffroad">
                     <h3>CalOffroad</h3>
                 </a>
-                <p>Performance suspension kits featuring Bilstein and Fox upgrades for enhanced off-road handling.</p>
             </div>
             <div class="brand-item">
                 <a href="https://www.cornells.com.au/" target="_blank" rel="noopener">
-                    <img src="https://titanmechanical.com.au/wp-content/uploads/2020/11/cornell.jpg" alt="Cornell">
+                    <img src="/cornell.jpg" alt="Cornell">
                     <h3>Cornell</h3>
                 </a>
-                <p>Diesel injection specialists for cleaner, more efficient operation.</p>
             </div>
             <div class="brand-item">
                 <a href="https://www.denso.com.au/" target="_blank" rel="noopener">
-                    <img src="https://titanmechanical.com.au/wp-content/uploads/2020/11/denso1.jpg" alt="Denso">
+                    <img src="/denso1.jpg" alt="Denso">
                     <h3>Denso</h3>
                 </a>
-                <p>Reliable engine management and fuel systems for consistent performance.</p>
             </div>
             <div class="brand-item">
                 <a href="https://directionplus.com.au/" target="_blank" rel="noopener">
-                    <img src="https://titanmechanical.com.au/wp-content/uploads/2020/11/direction-plus-logo.jpg" alt="Direction Plus">
+                    <img src="/direction-plus-logo.jpg" alt="Direction Plus">
                     <h3>Direction Plus</h3>
                 </a>
-                <p>Filtration and protection products reducing contaminants and wear.</p>
             </div>
             <div class="brand-item">
                 <a href="https://www.gturbo.com.au/" target="_blank" rel="noopener">
-                    <img src="https://titanmechanical.com.au/wp-content/uploads/2020/11/gturbo.png" alt="Gturbo">
+                    <img src="/gturbo.png" alt="Gturbo">
                     <h3>Gturbo</h3>
                 </a>
-                <p>Performance turbos increasing power and torque under tough conditions.</p>
             </div>
             <div class="brand-item">
                 <a href="https://www.harrop.com.au/" target="_blank" rel="noopener">
-                    <img src="https://titanmechanical.com.au/wp-content/uploads/2020/11/harrop.png" alt="Harrop">
+                    <img src="/harrop.png" alt="Harrop">
                     <h3>Harrop</h3>
                 </a>
-                <p>Upgraded driveline and superchargers enhancing capability and response.</p>
             </div>
             <div class="brand-item">
                 <a href="https://www.npcperformance.com.au/" target="_blank" rel="noopener">
-                    <img src="https://titanmechanical.com.au/wp-content/uploads/2020/11/npc.png" alt="NPC">
-                    <h3>NPC</h3>
+                <img src="/npc.png" alt="NPC">
+                <h3>NPC</h3>
                 </a>
-                <p>Heavy-duty clutch kits built to endure demanding off-road conditions.</p>
-            </div>
+               </div>
             <div class="brand-item">
                 <a href="https://processwest.com.au/catalog" target="_blank" rel="noopener">
-                    <img src="https://titanmechanical.com.au/wp-content/uploads/2020/11/process-west.png" alt="Process West">
-                    <h3>Process West</h3>
+                <img src="/process-west.png" alt="Process West">
+                <h3>Process West</h3>
                 </a>
-                <p>Quality intercoolers and intakes improving engine efficiency.</p>
             </div>
         </div>
     </section>
+
     <section id="social-media">
         <div class="container">
             <ul>
@@ -606,5 +601,6 @@
     <footer>
         <p>© 2024 Titan Mechanical. All rights reserved.</p>
     </footer>
+
 </body>
 </html>
