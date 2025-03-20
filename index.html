@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Titan Mechanical - Quality 4x4 Auto Repair</title>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Roboto+Slab:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
         /* --- Reset and Basic Styles --- */
         body {
@@ -36,7 +37,7 @@
         h3 { font-size: 24px; }
 
         p {
-          margin-bottom: 1rem; /* Add consistent spacing after paragraphs */
+          margin-bottom: 1rem;
         }
 
         a {
@@ -113,6 +114,11 @@
             border-radius: 8px;
         }
 
+        #hero h1 {
+            color: #fff; /* Force white color for h1 in hero */
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Add text shadow */
+        }
+
         /* --- Button --- */
         .btn {
             display: inline-block;
@@ -121,13 +127,14 @@
             background-color: #ef4b24;
             color: #fff;
             border-radius: 8px;
-            transition: background-color 0.3s ease;
+            transition: background-color 0.3s ease, color 0.3s ease; /* Add color transition */
             border: none;
             cursor: pointer;
         }
 
         .btn:hover {
-            background-color: #b37427;
+            background-color: #333; /* Darker background on hover */
+            color: #fff;  /* Keep text white on hover */
         }
 
         /* --- Sections --- */
@@ -226,8 +233,8 @@
 
         .brand-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-            gap: 40px;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Reduced minmax */
+            gap: 20px;  /*Reduced gap*/
             align-items: center;
             justify-items: center;
         }
@@ -237,13 +244,23 @@
             border-radius: 8px;
             padding: 20px;
             text-align: center;
-            max-width: 200px;
+            /*max-width: 200px; Removed max width */
+            width: 100%; /* Take up full container width */
+            box-sizing: border-box; /* Include padding in width calculation */
+            display: flex;
+            flex-direction: column;
+
         }
 
         .brand-item a {
             text-decoration: none;
             color: #333;
             display: block;
+            height: 100%; /* Ensure the link takes up full item height*/
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
         }
 
         .brand-item img {
@@ -251,17 +268,19 @@
             height: 80px;
             object-fit: contain;
             margin-bottom: 10px;
+            max-width: 100%; /* Prevent image overflow */
+
         }
 
         .brand-item h3 {
-            margin: 10px 0 5px 0;
+            margin: 0 0 5px 0; /*Reduce margin*/
             font-size: 16px;
             color: #333;
             line-height: 1.2;
         }
 
         .brand-item p {
-            display: none; /* Hide descriptions by default */
+            display: none;
         }
 
         /* --- Social Media --- */
@@ -389,7 +408,7 @@
             <h2>Our Services</h2>
             <div class="service-grid">
                 <div class="service">
-                    <img src="/brakes-clutches.jpg" alt="Brakes and Clutches">
+                    <img src="https://titanmechanical.com.au/wp-content/uploads/2017/05/slide_4.jpg" alt="Brakes and Clutches">
                     <h3>Brakes & Clutches</h3>
                     <div class="service-content">
                         <p>We offer:</p>
@@ -480,55 +499,55 @@
         <div class="brand-grid">
             <div class="brand-item">
                 <a href="https://www.redarc.com.au/" target="_blank" rel="noopener">
-                    <img src="/redarc.png" alt="Redarc">
+                    <img src="https://titanmechanical.com.au/wp-content/uploads/2020/11/redarc.png" alt="Redarc">
                     <h3>Redarc</h3>
                 </a>
             </div>
             <div class="brand-item">
                 <a href="https://www.redback4x4.com.au/" target="_blank" rel="noopener">
-                    <img src="/redback4x4-logo.png" alt="Redback">
+                    <img src="https://titanmechanical.com.au/wp-content/uploads/2020/11/redback4x4-logo.png" alt="Redback">
                     <h3>Redback</h3>
                 </a>
             </div>
             <div class="brand-item">
                 <a href="https://roadsafe.com.au/" target="_blank" rel="noopener">
-                    <img src="/roadsafe-logo.jpg" alt="Roadsafe">
+                    <img src="https://titanmechanical.com.au/wp-content/uploads/2020/11/roadsafe-logo.jpg" alt="Roadsafe">
                     <h3>Roadsafe</h3>
                 </a>
             </div>
             <div class="brand-item">
                 <a href="https://www.safari4x4.com.au/" target="_blank" rel="noopener">
-                    <img src="/safari.jpg" alt="Safari">
+                    <img src="https://titanmechanical.com.au/wp-content/uploads/2020/11/safari.jpg" alt="Safari">
                     <h3>Safari</h3>
                 </a>
             </div>
             <div class="brand-item">
                 <a href="http://www.vacc.com.au/" target="_blank" rel="noopener">
-                    <img src="/vacc_accreditation.jpg" alt="VACC">
+                    <img src="https://titanmechanical.com.au/wp-content/uploads/2017/05/vacc_accreditation_2.jpg" alt="VACC">
                     <h3>VACC</h3>
                 </a>
             </div>
             <div class="brand-item">
                 <a href="http://www.snapontools.com.au/diagnostics" target="_blank" rel="noopener">
-                    <img src="/Snap_On_Tools.jpg" alt="Snap On">
+                    <img src="https://titanmechanical.com.au/wp-content/uploads/2017/05/Snap_On_2.jpg" alt="Snap On">
                     <h3>Snap-On</h3>
                 </a>
             </div>
             <div class="brand-item">
                 <a href="http://grunt4x4.com.au/" target="_blank" rel="noopener">
-                    <img src="/grunt_550.jpg" alt="Grunt 4x4">
+                    <img src="https://titanmechanical.com.au/wp-content/uploads/2017/06/grunt_550.jpg" alt="Grunt 4x4">
                     <h3>Grunt 4x4</h3>
                 </a>
             </div>
             <div class="brand-item">
                 <a href="https://au.bosch-automotive.com/en/" target="_blank" rel="noopener">
-                    <img src="/Bosch_Batteries.jpg" alt="Bosch Batteries">
+                    <img src="https://titanmechanical.com.au/wp-content/uploads/2017/05/Bosch_Batteries.jpg" alt="Bosch Batteries">
                     <h3>Bosch Batteries</h3>
                 </a>
             </div>
             <div class="brand-item">
                 <a href="https://dobinsonsprings.com" target="_blank" rel="noopener">
-                    <img src="/dobinsons.jpg" alt="Dobinsons Suspension">
+                    <img src="https://titanmechanical.com.au/wp-content/uploads/2019/06/dobinsons.jpg" alt="Dobinsons Suspension">
                     <h3>Dobinsons Suspension</h3>
                 </a>
             </div>
@@ -546,43 +565,43 @@
             </div>
             <div class="brand-item">
                 <a href="https://www.cornells.com.au/" target="_blank" rel="noopener">
-                    <img src="/cornell.jpg" alt="Cornell">
+                    <img src="https://titanmechanical.com.au/wp-content/uploads/2020/11/cornell.jpg" alt="Cornell">
                     <h3>Cornell</h3>
                 </a>
             </div>
             <div class="brand-item">
                 <a href="https://www.denso.com.au/" target="_blank" rel="noopener">
-                    <img src="/denso1.jpg" alt="Denso">
+                    <img src="https://titanmechanical.com.au/wp-content/uploads/2020/11/denso1.jpg" alt="Denso">
                     <h3>Denso</h3>
                 </a>
             </div>
             <div class="brand-item">
                 <a href="https://directionplus.com.au/" target="_blank" rel="noopener">
-                    <img src="/direction-plus-logo.jpg" alt="Direction Plus">
+                    <img src="https://titanmechanical.com.au/wp-content/uploads/2020/11/direction-plus-logo.jpg" alt="Direction Plus">
                     <h3>Direction Plus</h3>
                 </a>
             </div>
             <div class="brand-item">
                 <a href="https://www.gturbo.com.au/" target="_blank" rel="noopener">
-                    <img src="/gturbo.png" alt="Gturbo">
+                    <img src="https://titanmechanical.com.au/wp-content/uploads/2020/11/gturbo.png" alt="Gturbo">
                     <h3>Gturbo</h3>
                 </a>
             </div>
             <div class="brand-item">
                 <a href="https://www.harrop.com.au/" target="_blank" rel="noopener">
-                    <img src="/harrop.png" alt="Harrop">
+                    <img src="https://titanmechanical.com.au/wp-content/uploads/2020/11/harrop.png" alt="Harrop">
                     <h3>Harrop</h3>
                 </a>
             </div>
             <div class="brand-item">
                 <a href="https://www.npcperformance.com.au/" target="_blank" rel="noopener">
-                <img src="/npc.png" alt="NPC">
+                <img src="https://titanmechanical.com.au/wp-content/uploads/2020/11/npc.png" alt="NPC">
                 <h3>NPC</h3>
                 </a>
                </div>
             <div class="brand-item">
                 <a href="https://processwest.com.au/catalog" target="_blank" rel="noopener">
-                <img src="/process-west.png" alt="Process West">
+                <img src="https://titanmechanical.com.au/wp-content/uploads/2020/11/process-west.png" alt="Process West">
                 <h3>Process West</h3>
                 </a>
             </div>
